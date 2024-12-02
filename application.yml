@@ -3,6 +3,16 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    defer-datasource-initialization: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
   security:
     oauth2:
       client:

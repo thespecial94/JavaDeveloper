@@ -2,3 +2,20 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: profiler-security
+            scope: openid
+            authorization-grant-type: password
+            client-secret: FefCyUWfCEa3qFcjwgbAFUoRdvXtiRm7
+        provider:
+          keycloak:
+            token-uri: https://localhost:8080/realms/profiler/protocol/openid-connect/token
+            issuer-uri: http://localhost:8080/realms/profiler/protocol/openid-connect/certs
+logging:
+  level:
+    org.springframework.security: trace

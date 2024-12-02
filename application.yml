@@ -3,8 +3,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 spring:
-  application:
-    name: GATEWAY-SERVICE
   security:
     oauth2:
       client:
@@ -21,5 +19,3 @@ spring:
 logging:
   level:
     org.springframework.security: trace
-server:
-  port: 8888

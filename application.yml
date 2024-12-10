@@ -15,17 +15,9 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   security:
     oauth2:
-      client:
-        registration:
-          keycloak:
-            client-id: profiler-security
-            scope: openid
-            authorization-grant-type: password
-            client-secret: FefCyUWfCEa3qFcjwgbAFUoRdvXtiRm7
-        provider:
-          keycloak:
-            token-uri: https://localhost:8080/realms/profiler/protocol/openid-connect/token
-            issuer-uri: http://localhost:8080/realms/profiler/protocol/openid-connect/certs
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/profiler
 logging:
   level:
     org.springframework.security: trace
